@@ -61,7 +61,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.p
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.Brightness;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.ChestESP;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.Crosshair;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.DONOTFUCKINGDIEYOURETARD;
+import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.Health;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.Freecam;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.Lines;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.render.Nametags;
@@ -98,7 +98,7 @@ extends AbstractManager<Module> {
         this.add(new DeathClip(new ModuleData(ModuleData.Type.Other, "DeathClip", "Teleports you on death.")));
         this.add(new Triggerbot(new ModuleData(ModuleData.Type.Combat, "Triggerbot", "Clicks when hovering over a player.")));
         this.add(new AimAssist(new ModuleData(ModuleData.Type.Combat, "AimAssist", "Helps you aim better.")));
-        this.add(new DONOTFUCKINGDIEYOURETARD(new ModuleData(ModuleData.Type.Visuals, "Health", "Shows your health in the middle of the screen.")));
+        this.add(new Health(new ModuleData(ModuleData.Type.Visuals, "Health", "Shows your health in the middle of the screen.")));
         this.add(new AutoTool(new ModuleData(ModuleData.Type.Player, "AutoTool", "Switches to best tool.")));
         this.add(new Scaffold(new ModuleData(ModuleData.Type.Movement, "Scaffold", "Silently places blocks below your feets.")));
         //this.add(new AntiVanish(new ModuleData(ModuleData.Type.Other, "AntiVanish", "Alerts you of vanished staff members.")));

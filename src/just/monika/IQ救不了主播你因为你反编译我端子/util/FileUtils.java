@@ -47,7 +47,7 @@ public final class FileUtils {
     }
 
     public static File getConfigDir() {
-        File file = new File(Minecraft.getMinecraft().mcDataDir, "Sigma");
+        File file = new File(Minecraft.getMinecraft().mcDataDir, "Doki");
         if (!file.exists()) {
             file.mkdir();
         }

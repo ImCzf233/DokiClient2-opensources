@@ -21,8 +21,8 @@ import net.minecraft.client.gui.GuiScreen;
 
 public class DokiDokiLegitClient { // Fuck You Czf233
     public static DokiDokiLegitClient instance;
-    public static final String author = "Arithmo";
-    public static final String version = "1.60";
+    public static final String author = "NotMonika";
+    public static final String version = "2.0";
     private static final int VERSION_CHECK = 34646;
     public static final String clientName = "Doki";
     public static ColorManager cm;

@@ -42,8 +42,8 @@ extends Module {
         boolean t = DokiDokiLegitClient.getModuleManager().isEnabled(TabGUI.class);
         RenderingUtil.rectangle(2.0, 1.0, 56.0, 13.0, Colors.getColor(0, t ? TabGUI.opacity : 200));
         RenderingUtil.rectangle(2.3, 1.3, 4.0, 12.7, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, t ? TabGUI.opacity + 40 : 232));
-        DokiDokiLegitClient.fm.getFont("SFR 11").drawStringWithShadow("Sigma", 5.0f, 3.0f, Colors.getColor(255, t ? TabGUI.opacity + 64 : 232));
-        float offset = DokiDokiLegitClient.fm.getFont("SFR 11").getWidth("Sigma");
+        DokiDokiLegitClient.fm.getFont("SFR 11").drawStringWithShadow("DokiClient", 5.0f, 3.0f, Colors.getColor(255, t ? TabGUI.opacity + 64 : 232));
+        float offset = DokiDokiLegitClient.fm.getFont("SFR 11").getWidth("DokiClient");
         DokiDokiLegitClient.fm.getFont("SFB 7").drawStringWithShadow(DokiDokiLegitClient.version, 4.0f + offset, 3.0f, rainbow ? Color.getHSBColor(this.hue.getOpacity() / 255.0f, 0.6f, 1.0f).getRGB() : Colors.getColor(232, 100, 80, t ? TabGUI.opacity + 64 : 255));
         int y = 4;
         CopyOnWriteArrayList<Module> modules = new CopyOnWriteArrayList<Module>();

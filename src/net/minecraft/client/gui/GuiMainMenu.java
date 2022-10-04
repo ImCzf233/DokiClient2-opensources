@@ -96,8 +96,6 @@ extends GuiScreen {
         GuiMainMenu.drawScaledCustomSizeModalRect(0, 0, 0.0f, 0.0f, w + 2, h, w + 2, h, w + 2, h);
         GlStateManager.bindTexture(0);
         GlStateManager.enableBlend();
-        this.mc.getTextureManager().bindTexture(this.text);
-        GuiMainMenu.drawModalRectWithCustomSizedTexture(w / 2 - 75, this.height / 5 - 20, 0.0f, 0.0f, 150, 48, 150.0f, 48.0f);
         GlStateManager.disableBlend();
         this.particles.render(mouseX, mouseY);
         super.drawScreen(mouseX, mouseY, partialTicks);
