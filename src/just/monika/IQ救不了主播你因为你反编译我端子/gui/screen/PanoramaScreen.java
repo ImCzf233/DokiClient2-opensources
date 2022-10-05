@@ -7,7 +7,7 @@
  */
 package just.monika.IQ救不了主播你因为你反编译我端子.gui.screen;
 
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.ColorContainer;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.gui.GuiButton;
@@ -106,7 +106,7 @@ extends GuiScreen {
     }
 	protected void renderSkybox(int x, int y, float f) {
         ScaledResolution sr = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
-        RenderingUtil.rectangle(0.0, 0.0, sr.getScaledWidth(), sr.getScaledHeight(), Colors.getColor(23, 23, 23));
+        JelloRenderUtil.rectangle(0.0, 0.0, sr.getScaledWidth(), sr.getScaledHeight(), Colors.getColor(23, 23, 23));
     }
 
     protected void drawPanorama(int x, int y, float partial) {

@@ -13,7 +13,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.event.Registe
 import just.monika.IQ救不了主播你因为你反编译我端子.event.impl.EventMotion;
 import just.monika.IQ救不了主播你因为你反编译我端子.event.impl.EventRender3D;
 import just.monika.IQ救不了主播你因为你反编译我端子.event.impl.EventRenderEntity;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.MCStencil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Stencil;
@@ -97,9 +97,9 @@ extends Module {
                         }
                     }
                 } else if (((EntityPlayer)entity).isMurderer) {
-                    RenderingUtil.glColor(Colors.getColor(189, 44, 221));
+                    JelloRenderUtil.glColor(Colors.getColor(189, 44, 221));
                 } else {
-                    RenderingUtil.glColor(customColor.getRGB());
+                    JelloRenderUtil.glColor(customColor.getRGB());
                 }
                 GL11.glPushMatrix();
                 GL11.glDisable((int)2929);

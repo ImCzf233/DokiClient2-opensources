@@ -7,16 +7,7 @@ import java.util.ArrayList;
 
 import just.monika.IQ救不了主播你因为你反编译我端子.management.AbstractManager;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.ModuleData;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.AimAssist;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.AntiVelocity;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.AutoArmor;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.AutoPot;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.AutoSoup;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.AutoSword;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.BowAimbot;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.Criticals;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.Killaura;
-import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.Triggerbot;
+import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.combat.*;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.hud.ArmorStatus;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.hud.Enabled;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.impl.hud.TabGUI;
@@ -79,6 +70,7 @@ extends AbstractManager<Module> {
 
     @Override
     public void setup() {
+        this.add(new Regen());
         this.add(new Catch(new ModuleData(ModuleData.Type.Movement, "Catch", "Prevents you from getting crippled.")));
         this.add(new Janitor(new ModuleData(ModuleData.Type.Player, "Cleaner", "Cleans your inventory from useless items.")));
         this.add(new Timer(new ModuleData(ModuleData.Type.Other, "Timer", "Modifies game speed. Can be used to 'bow fly'.")));

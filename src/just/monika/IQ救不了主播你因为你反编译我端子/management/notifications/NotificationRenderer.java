@@ -8,7 +8,7 @@ package just.monika.IQ救不了主播你因为你反编译我端子.management.n
 
 import java.util.List;
 import just.monika.IQ救不了主播你因为你反编译我端子.DokiDokiLegitClient;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
@@ -31,21 +31,21 @@ implements INotificationRenderer {
             GL11.glPushMatrix();
             GL11.glEnable((int)3089);
             GL11.glScissor((int)((int)not.translate.getX() * 2), (int)((int)((float)scaledRes.getScaledWidth() - not.translate.getY() * 2.0f)), (int)(scaledRes.getScaledWidth() * 2), (int)((int)(not.translate.getY() + 50.0f)));
-            RenderingUtil.rectangle(x, not.translate.getY(), scaledRes.getScaledWidth(), not.translate.getY() + 22.0f - 2.0f, Colors.getColor(0, 200));
+            JelloRenderUtil.rectangle(x, not.translate.getY(), scaledRes.getScaledWidth(), not.translate.getY() + 22.0f - 2.0f, Colors.getColor(0, 200));
             for (int i = 0; i < 11; ++i) {
                 GlStateManager.pushMatrix();
                 GlStateManager.translate(x + 10.0f, not.translate.getY() + 13.0f, 0.0f);
                 GlStateManager.rotate(270.0f, 0.0f, 0.0f, 90.0f);
-                RenderingUtil.drawCircle(0.0f, 0.0f, 11 - i, 3, this.getColor(not.getType()));
+                JelloRenderUtil.drawCircle(0.0f, 0.0f, 11 - i, 3, this.getColor(not.getType()));
                 GlStateManager.popMatrix();
             }
             GlStateManager.pushMatrix();
             GlStateManager.translate(x + 10.0f, not.translate.getY() + 13.0f, 0.0f);
             GlStateManager.rotate(270.0f, 0.0f, 0.0f, 90.0f);
-            RenderingUtil.drawCircle(0.0f, 0.0f, 11.0f, 3, Colors.getColor(0));
+            JelloRenderUtil.drawCircle(0.0f, 0.0f, 11.0f, 3, Colors.getColor(0));
             GlStateManager.popMatrix();
-            RenderingUtil.rectangle((double)x + 9.6, not.translate.getY() + 5.0f, (double)x + 10.3, not.translate.getY() + 13.0f, Colors.getColor(0));
-            RenderingUtil.rectangle((double)x + 9.6, not.translate.getY() + 15.0f, (double)x + 10.3, not.translate.getY() + 17.0f, Colors.getColor(0));
+            JelloRenderUtil.rectangle((double)x + 9.6, not.translate.getY() + 5.0f, (double)x + 10.3, not.translate.getY() + 13.0f, Colors.getColor(0));
+            JelloRenderUtil.rectangle((double)x + 9.6, not.translate.getY() + 15.0f, (double)x + 10.3, not.translate.getY() + 17.0f, Colors.getColor(0));
             DokiDokiLegitClient.fm.getFont("SFB 11").drawStringWithShadow(not.getHeader(), x + 18.0f, not.translate.getY() + 3.0f, -1);
             DokiDokiLegitClient.fm.getFont("SFM 8").drawStringWithShadow(not.getSubtext(), x + 20.0f, not.translate.getY() + 13.0f, -1);
             GL11.glDisable((int)3089);

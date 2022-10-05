@@ -22,7 +22,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.event.impl.Ev
 import just.monika.IQ救不了主播你因为你反编译我端子.management.waypoints.Waypoint;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.Module;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.ModuleData;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.RotationUtils;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.Minecraft;
@@ -66,7 +66,7 @@ extends Module {
                 this.scale();
                 GlStateManager.translate(0.0, -2.5, 0.0);
                 int strWidth = Waypoints.mc.fontRendererObj.getStringWidth(str);
-                RenderingUtil.rectangleBordered((- strWidth) / 2 - 3, -12.0, strWidth / 2 + 3, 1.0, 1.0, Colors.getColor(40, 40, 40, 190), waypoint.getColor());
+                JelloRenderUtil.rectangleBordered((- strWidth) / 2 - 3, -12.0, strWidth / 2 + 3, 1.0, 1.0, Colors.getColor(40, 40, 40, 190), waypoint.getColor());
                 GlStateManager.color(1.0f, 1.0f, 1.0f);
                 Waypoints.mc.fontRendererObj.drawStringWithShadow(str, (- strWidth) / 2, -9.0f, waypoint.getColor());
                 GlStateManager.popMatrix();

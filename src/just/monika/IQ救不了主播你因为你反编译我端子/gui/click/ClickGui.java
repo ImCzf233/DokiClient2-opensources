@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import just.monika.IQ救不了主播你因为你反编译我端子.gui.click.components.MainPanel;
 import just.monika.IQ救不了主播你因为你反编译我端子.gui.click.ui.Menu;
-import just.monika.IQ救不了主播你因为你反编译我端子.gui.click.ui.Sigma;
+import just.monika.IQ救不了主播你因为你反编译我端子.gui.click.ui.DokiClientCgui;
 import just.monika.IQ救不了主播你因为你反编译我端子.gui.click.ui.UI;
 import just.monika.IQ救不了主播你因为你反编译我端子.management.animate.Opacity;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
@@ -32,8 +32,8 @@ extends GuiScreen {
     }
 
     public ClickGui() {
-        this.themes.add(new Sigma());
-        this.mainPanel = new MainPanel("Exhibition", 50.0f, 50.0f, this.themes.get(0));
+        this.themes.add(new DokiClientCgui());
+        this.mainPanel = new MainPanel("DokiClient", 50.0f, 50.0f, this.themes.get(0));
         this.themes.get(0).mainConstructor(this, this.mainPanel);
     }
 
@@ -42,7 +42,7 @@ extends GuiScreen {
         super.drawScreen(mouseX, mouseY, partialTicks);
         ScaledResolution res = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
         this.opacity.interpolate(100);
-        RenderingUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0, (int)this.opacity.getOpacity()));
+        JelloRenderUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0, (int)this.opacity.getOpacity()));
         this.mainPanel.draw(mouseX, mouseY);
     }
 

@@ -10,7 +10,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.DataFlavor;
 import java.io.IOException;
 
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -61,7 +61,7 @@ extends GuiScreen {
     @Override
     public void drawScreen(int x, int y, float z) {
         ScaledResolution res = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
-        RenderingUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
+        JelloRenderUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
         this.username.drawTextBox();
         this.password.drawTextBox();
         this.drawCenteredString(this.mc.fontRendererObj, "Alt Login", this.width / 2, 20, -1);

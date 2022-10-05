@@ -13,7 +13,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.module.Module
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.ModuleData;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.Setting;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.PlayerUtil;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.Timer;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -77,7 +77,7 @@ extends Module {
                     float endZ = (float)((double)((float)vecEnd.zCoord) - RenderManager.renderPosZ);
                     boolean bobbing = Blink.mc.gameSettings.viewBobbing;
                     Blink.mc.gameSettings.viewBobbing = false;
-                    RenderingUtil.drawLine3D(beginX, beginY, beginZ, endX, endY, endZ, color);
+                    JelloRenderUtil.drawLine3D(beginX, beginY, beginZ, endX, endY, endZ, color);
                     Blink.mc.gameSettings.viewBobbing = bobbing;
                 }
             }

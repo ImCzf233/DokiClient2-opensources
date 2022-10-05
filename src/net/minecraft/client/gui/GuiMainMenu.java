@@ -36,38 +36,6 @@ extends GuiScreen {
         this.buttonList.add(new GuiMenuButton(3, xMid + 150, initHeight, objWidth, objHeight, strLang));
         this.buttonList.add(new GuiMenuButton(4, xMid - 100, initHeight + 100, objWidth, objHeight, strAccounts));
         this.buttonList.add(new GuiMenuButton(5, xMid + 100, initHeight + 100, objWidth, objHeight, strQuit));
-//        try {
-//            String inputLine;
-//            SSLUtilities.trustAllHostnames();
-//            SSLUtilities.trustAllHttpsCertificates();
-//            System.setProperty("java.protocol.handler.pkgs", "com.sun.net.ssl.internal.www.protocol");
-//            Security.addProvider(new Provider());
-//            HostnameVerifier allHostsValid = (hostname, session) -> true;
-//            HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-//            HttpsURLConnection.setDefaultHostnameVerifier((hostname, sslSession) -> true);
-//            File file = new File(new File("Sigma"), "public.key");
-//            URL url = new URL("https://www.sigmaclient.info/verify/" + Authentication.convertToHex(file) + "|" + Minecraft.getHwid());
-//            HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
-//            connection.setReadTimeout(60000);
-//            connection.setConnectTimeout(60000);
-//            connection.setRequestProperty("User-Agent", "ArthimoWareTM-Agent");
-//            connection.setUseCaches(false);
-//            connection.connect();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-//            StringBuilder str = new StringBuilder();
-//            while ((inputLine = reader.readLine()) != null) {
-//                str.append(inputLine);
-//            }
-//            Gson gson = new Gson();
-//            JsonObject array = (JsonObject)gson.fromJson(str.toString(), JsonObject.class);
-//            if (!array.get("HWID").toString().equalsIgnoreCase("\"" + Minecraft.getHwid() + "\"")) {
-//                // empty if block
-//            }
-//            reader.close();
-//        }
-//        catch (Exception e) {
-//        //    Display.destroy();
-//        }
     }
 
     @Override

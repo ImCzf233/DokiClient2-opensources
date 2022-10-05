@@ -5,7 +5,7 @@ package just.monika.IQ救不了主播你因为你反编译我端子.gui.altmanag
 
 import java.io.IOException;
 
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -42,7 +42,7 @@ extends GuiScreen {
     @Override
     public void drawScreen(int par1, int par2, float par3) {
         ScaledResolution res = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
-        RenderingUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
+        JelloRenderUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
         this.drawCenteredString(this.fontRendererObj, "Edit Alt", this.width / 2, 10, -1);
         this.drawCenteredString(this.fontRendererObj, this.status, this.width / 2, 20, -1);
         this.nameField.drawTextBox();

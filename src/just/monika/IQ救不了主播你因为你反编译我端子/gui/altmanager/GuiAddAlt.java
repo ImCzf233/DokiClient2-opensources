@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.Proxy;
 
 import just.monika.IQ救不了主播你因为你反编译我端子.DokiDokiLegitClient;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -67,7 +67,7 @@ public class GuiAddAlt
   public void drawScreen(int i, int j, float f)
   {
     ScaledResolution res = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
-    RenderingUtil.rectangle(0.0D, 0.0D, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
+    JelloRenderUtil.rectangle(0.0D, 0.0D, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
     this.username.drawTextBox();
     this.password.drawTextBox();
     drawCenteredString(this.fontRendererObj, "Add Alt", this.width / 2, 20, -1);

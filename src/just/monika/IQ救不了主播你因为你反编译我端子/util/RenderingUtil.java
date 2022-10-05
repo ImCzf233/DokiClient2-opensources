@@ -148,11 +148,11 @@ public class RenderingUtil {
     }
 
     public static void rectangleBordered(double x, double y, double x1, double y1, double width, int internalColor, int borderColor) {
-        RenderingUtil.rectangle(x + width, y + width, x1 - width, y1 - width, internalColor);
-        RenderingUtil.rectangle(x + width, y, x1 - width, y + width, borderColor);
-        RenderingUtil.rectangle(x, y, x + width, y1, borderColor);
-        RenderingUtil.rectangle(x1 - width, y, x1, y1, borderColor);
-        RenderingUtil.rectangle(x + width, y1 - width, x1 - width, y1, borderColor);
+        JelloRenderUtil.rectangle(x + width, y + width, x1 - width, y1 - width, internalColor);
+        JelloRenderUtil.rectangle(x + width, y, x1 - width, y + width, borderColor);
+        JelloRenderUtil.rectangle(x, y, x + width, y1, borderColor);
+        JelloRenderUtil.rectangle(x1 - width, y, x1, y1, borderColor);
+        JelloRenderUtil.rectangle(x + width, y1 - width, x1 - width, y1, borderColor);
     }
 
     public static void filledBox(AxisAlignedBB boundingBox, int color, boolean shouldColor) {
@@ -334,7 +334,7 @@ public class RenderingUtil {
     }
 
     public static void drawLine3D(float x, float y, float z, float x1, float y1, float z1, int color) {
-        RenderingUtil.pre3D();
+        JelloRenderUtil.pre3D();
         GL11.glLoadIdentity();
         Minecraft.getMinecraft().entityRenderer.orientCamera(Minecraft.getMinecraft().timer.renderPartialTicks);
         float var11 = (float)(color >> 24 & 255) / 255.0f;
@@ -347,11 +347,11 @@ public class RenderingUtil {
         GL11.glVertex3d((double)x, (double)y, (double)z);
         GL11.glVertex3d((double)x1, (double)y1, (double)z1);
         GL11.glEnd();
-        RenderingUtil.post3D();
+        JelloRenderUtil.post3D();
     }
 
     public static void draw3DLine(float x, float y, float z, int color) {
-        RenderingUtil.pre3D();
+        JelloRenderUtil.pre3D();
         GL11.glLoadIdentity();
         Minecraft.getMinecraft().entityRenderer.orientCamera(Minecraft.getMinecraft().timer.renderPartialTicks);
         float var11 = (float)(color >> 24 & 255) / 255.0f;
@@ -364,7 +364,7 @@ public class RenderingUtil {
         GL11.glVertex3d((double)0.0, (double)Minecraft.getMinecraft().thePlayer.getEyeHeight(), (double)0.0);
         GL11.glVertex3d((double)x, (double)y, (double)z);
         GL11.glEnd();
-        RenderingUtil.post3D();
+        JelloRenderUtil.post3D();
     }
 
     public static void pre3D() {
@@ -415,16 +415,16 @@ public class RenderingUtil {
     }
 
     public static void drawRect(float x, float y, float x1, float y1, int color) {
-        RenderingUtil.enableGL2D();
-        RenderingUtil.glColor(color);
-        RenderingUtil.drawRect(x, y, x1, y1);
-        RenderingUtil.disableGL2D();
+        JelloRenderUtil.enableGL2D();
+        JelloRenderUtil.glColor(color);
+        JelloRenderUtil.drawRect(x, y, x1, y1);
+        JelloRenderUtil.disableGL2D();
     }
 
     public static void drawRoundedRect(float x, float y, float x1, float y1, int borderC, int insideC) {
-        RenderingUtil.drawRect(x + 0.5f, y, x1 - 0.5f, y + 0.5f, insideC);
-        RenderingUtil.drawRect(x + 0.5f, y1 - 0.5f, x1 - 0.5f, y1, insideC);
-        RenderingUtil.drawRect(x, y + 0.5f, x1, y1 - 0.5f, insideC);
+        JelloRenderUtil.drawRect(x + 0.5f, y, x1 - 0.5f, y + 0.5f, insideC);
+        JelloRenderUtil.drawRect(x + 0.5f, y1 - 0.5f, x1 - 0.5f, y1, insideC);
+        JelloRenderUtil.drawRect(x, y + 0.5f, x1, y1 - 0.5f, insideC);
     }
 
     public static void drawHLine(float x, float y, float x1, int y1) {
@@ -433,7 +433,7 @@ public class RenderingUtil {
             x = y;
             y = var5;
         }
-        RenderingUtil.drawRect(x, x1, y + 1.0f, x1 + 1.0f, y1);
+        JelloRenderUtil.drawRect(x, x1, y + 1.0f, x1 + 1.0f, y1);
     }
 
     public static void drawVLine(float x, float y, float x1, float y1, float width, int color) {
@@ -441,7 +441,7 @@ public class RenderingUtil {
             return;
         }
         GL11.glPushMatrix();
-        RenderingUtil.pre3D();
+        JelloRenderUtil.pre3D();
         float var11 = (float)(color >> 24 & 255) / 255.0f;
         float var6 = (float)(color >> 16 & 255) / 255.0f;
         float var7 = (float)(color >> 8 & 255) / 255.0f;
@@ -459,7 +459,7 @@ public class RenderingUtil {
         GL11.glEnd();
         GlStateManager.shadeModel(shade);
         GL11.glLineWidth((float)line);
-        RenderingUtil.post3D();
+        JelloRenderUtil.post3D();
         GL11.glPopMatrix();
     }
 
@@ -496,7 +496,7 @@ public class RenderingUtil {
         float s = (float)Math.sin(theta);
         float x = r *= 2.0f;
         float y = 0.0f;
-        RenderingUtil.enableGL2D();
+        JelloRenderUtil.enableGL2D();
         GL11.glScalef((float)0.5f, (float)0.5f, (float)0.5f);
         GL11.glColor4f((float)f1, (float)f2, (float)f3, (float)f);
         GL11.glBegin((int)2);
@@ -508,21 +508,21 @@ public class RenderingUtil {
         }
         GL11.glEnd();
         GL11.glScalef((float)2.0f, (float)2.0f, (float)2.0f);
-        RenderingUtil.disableGL2D();
+        JelloRenderUtil.disableGL2D();
         GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
         GL11.glPopMatrix();
     }
 
     public static void drawBorderedCircle(float circleX, float circleY, double radius, double width, int borderColor, int innerColor) {
-        RenderingUtil.enableGL2D();
+        JelloRenderUtil.enableGL2D();
         GlStateManager.enableBlend();
         GL11.glEnable((int)2881);
-        RenderingUtil.drawCircle(circleX, circleY, (float)(radius - 0.5 + width), 72, borderColor);
-        RenderingUtil.drawFullCircle(circleX, circleY, (float)radius, innerColor);
+        JelloRenderUtil.drawCircle(circleX, circleY, (float)(radius - 0.5 + width), 72, borderColor);
+        JelloRenderUtil.drawFullCircle(circleX, circleY, (float)radius, innerColor);
         GlStateManager.disableBlend();
         GL11.glDisable((int)2881);
         GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderingUtil.disableGL2D();
+        JelloRenderUtil.disableGL2D();
     }
 
     public static void drawCircleNew(float x, float y, float radius, int numberOfSides) {
@@ -539,12 +539,12 @@ public class RenderingUtil {
         float s = (float)Math.sin(theta);
         float x = r *= 2.0f;
         float y = 0.0f;
-        RenderingUtil.enableGL2D();
+        JelloRenderUtil.enableGL2D();
         GL11.glEnable((int)2848);
         GL11.glHint((int)3154, (int)4354);
         GL11.glEnable((int)3024);
         GL11.glScalef((float)0.5f, (float)0.5f, (float)0.5f);
-        RenderingUtil.glColor(c);
+        JelloRenderUtil.glColor(c);
         GL11.glBegin((int)9);
         for (int ii = 0; ii < 32; ++ii) {
             GL11.glVertex2f((float)(x + cx), (float)(y + cy));
@@ -555,7 +555,7 @@ public class RenderingUtil {
         GL11.glEnd();
         GL11.glScalef((float)2.0f, (float)2.0f, (float)2.0f);
         GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
-        RenderingUtil.disableGL2D();
+        JelloRenderUtil.disableGL2D();
     }
     public static void glColor(Color color)
     {

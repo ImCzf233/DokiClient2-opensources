@@ -14,7 +14,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.module.Module
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.ModuleData;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.Setting;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.MathUtils;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.RotationUtils;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.StringConversions;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.Timer;
@@ -109,7 +109,7 @@ public class BubbleGui
             (int)(Math.sin(currentModVal + 1.5707963267948966D) * 127.0D + 128.0D), 
             (int)(Math.sin(currentModVal + 3.141592653589793D) * 127.0D + 128.0D));
           
-          RenderingUtil.drawBorderedCircle(this.setX + (int)rotX, (int)rotY + er
+          JelloRenderUtil.drawBorderedCircle(this.setX + (int)rotX, (int)rotY + er
             .getResolution().getScaledHeight() / 2, 10.0D, 1.0D, 
             Colors.getColor(color[currentModVal].getRed(), color[currentModVal].getGreen(), color[currentModVal]
             .getBlue(), getAlpha(rot, 2.35F)), 
@@ -117,7 +117,7 @@ public class BubbleGui
           String xd = mod.getName().charAt(0) + mod.getName().toLowerCase().substring(1);
           GlStateManager.pushMatrix();
           GlStateManager.enableBlend();
-          RenderingUtil.drawOutlinedString(xd + " " + (
+          JelloRenderUtil.drawOutlinedString(xd + " " + (
             getSettings(this.selectedModule).get(this.currentSetting) == mod ? mod.getValue() : ""), this.setX + (int)rotX1, (int)rotY1 + er
             .getResolution().getScaledHeight() / 2, 
             Colors.getColor(255, 255, 255, getAlpha(rot, 2.35F)));
@@ -150,7 +150,7 @@ public class BubbleGui
             (int)(Math.sin(currentModVal + 1.5707963267948966D) * 127.0D + 128.0D), 
             (int)(Math.sin(currentModVal + 3.141592653589793D) * 127.0D + 128.0D));
           
-          RenderingUtil.drawBorderedCircle(this.modX + (int)rotX, (int)rotY + er
+          JelloRenderUtil.drawBorderedCircle(this.modX + (int)rotX, (int)rotY + er
             .getResolution().getScaledHeight() / 2, 10.0D, 1.0D, 
             Colors.getColor(color[currentModVal].getRed(), color[currentModVal].getGreen(), color[currentModVal]
             .getBlue(), getAlpha(rot, 2.25F)), 
@@ -159,7 +159,7 @@ public class BubbleGui
           {
             GlStateManager.pushMatrix();
             GlStateManager.enableBlend();
-            RenderingUtil.drawOutlinedString(mod.getName(), this.modX + (int)rotX1, (int)rotY1 + er
+            JelloRenderUtil.drawOutlinedString(mod.getName(), this.modX + (int)rotX1, (int)rotY1 + er
               .getResolution().getScaledHeight() / 2, mod
               .isEnabled() ? Colors.getColor(255, 255, 255, getAlpha(rot, 2.25F)) : 
               Colors.getColor(175, 175, 175, getAlpha(rot, 2.25F)));
@@ -186,7 +186,7 @@ public class BubbleGui
         Color color3 = new Color(Module.getColor(type));
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
-        RenderingUtil.drawBorderedCircle(this.hiddenX + (int)rotX, (int)rotY + er
+        JelloRenderUtil.drawBorderedCircle(this.hiddenX + (int)rotX, (int)rotY + er
           .getResolution().getScaledHeight() / 2, 10.0D, 1.0D, 
           Colors.getColor(color3.getRed(), color3.getGreen(), color3.getBlue(), getAlpha(rot, 2.2F)), 
           Colors.getColor(20, 20, 20, getAlpha(rot, 2.2F)));
@@ -196,7 +196,7 @@ public class BubbleGui
         {
           GlStateManager.pushMatrix();
           GlStateManager.enableBlend();
-          RenderingUtil.drawOutlinedString(type.name(), this.hiddenX + (int)rotX1 + 5, (int)rotY1 + er
+          JelloRenderUtil.drawOutlinedString(type.name(), this.hiddenX + (int)rotX1 + 5, (int)rotY1 + er
             .getResolution().getScaledHeight() / 2, 
             Colors.getColor(255, 255, 255, getAlpha(rot, 2.2F)));
           GlStateManager.disableBlend();
@@ -204,7 +204,7 @@ public class BubbleGui
         }
         rot -= 45;
       }
-      RenderingUtil.drawBorderedCircle(this.hiddenX / 8, er.getResolution().getScaledHeight() / 2, 24.0D, 1.0D, 
+      JelloRenderUtil.drawBorderedCircle(this.hiddenX / 8, er.getResolution().getScaledHeight() / 2, 24.0D, 1.0D,
         Colors.getColor(50, 255, 163), Colors.getColor(20, 20, 20));
     }
     if ((event instanceof EventKeyPress))

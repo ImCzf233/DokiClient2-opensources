@@ -30,7 +30,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.module.Module
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.ModuleData;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.Setting;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.MathUtils;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.StringConversions;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.TTFFontRenderer;
@@ -42,7 +42,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
-public class Sigma
+public class DokiClientCgui
 extends UI {
     public Expand expand = new Expand(0.0f, 0.0f, 0.0f, 0.0f);
     public Expand setExpand = new Expand(200.0f, 175.0f, 0.0f, 0.0f);
@@ -116,7 +116,7 @@ extends UI {
         } else {
             this.expand.interpolate(200.0f, 300.0f, speedx, speedy);
         }
-        RenderingUtil.drawRoundedRect(x - 99.0f, y - 149.0f, x + 99.0f, y + 149.0f, Colors.getColor(232, 245), Colors.getColor(232, 245));
+        JelloRenderUtil.drawRoundedRect(x - 99.0f, y - 149.0f, x + 99.0f, y + 149.0f, Colors.getColor(232, 245), Colors.getColor(232, 245));
         TTFFontRenderer font = DokiDokiLegitClient.fm.getFont("SFR 14");
         font.drawCenteredString("Doki Client II", x, y - 140.0f, Colors.getColor(45));
         for (CategoryButton button : panel.typeButton) {
@@ -429,7 +429,7 @@ extends UI {
         ScaledResolution res = new ScaledResolution(this.g, this.g.displayWidth, this.g.displayHeight);
         float x1 = res.getScaledWidth() / 2;
         float y1 = res.getScaledHeight() / 2;
-        RenderingUtil.drawRoundedRect(x1 - 148.0f, y1 - 173.0f, x1 + 148.0f, y1 + 173.0f, Colors.getColor(232), Colors.getColor(232));
+        JelloRenderUtil.drawRoundedRect(x1 - 148.0f, y1 - 173.0f, x1 + 148.0f, y1 + 173.0f, Colors.getColor(232), Colors.getColor(232));
         DokiDokiLegitClient.fm.getFont("SFR 12").drawCenteredString(categoryPanel.headerString, x1, y1 - 160.0f, Colors.getColor(0));
         if (categoryPanel.settingModule != null) {
             this.setExpand.interpolate(this.setExpand.getX(), 310.0f, 0, 25);
@@ -445,7 +445,7 @@ extends UI {
         GL11.glPushMatrix();
         GL11.glScissor((int)((int)(x1 - 146.0f) * 2), (int)((int)(y1 - 170.0f) * 2), (int)584, (int)((int)this.setExpand.getExpandY() * 2));
         GL11.glEnable((int)3089);
-        RenderingUtil.drawRoundedRect(x1 - 145.0f, y1 - 138.0f, x1 + 145.0f, y1 + 170.0f, Colors.getColor(215), Colors.getColor(215));
+        JelloRenderUtil.drawRoundedRect(x1 - 145.0f, y1 - 138.0f, x1 + 145.0f, y1 + 170.0f, Colors.getColor(215), Colors.getColor(215));
         for (Slider slider : categoryPanel.sliders) {
             if (slider.module != categoryPanel.settingModule) continue;
             slider.draw(x, y);
@@ -505,16 +505,16 @@ extends UI {
         ScaledResolution res = new ScaledResolution(this.g, this.g.displayWidth, this.g.displayHeight);
         float x1 = (float)(res.getScaledWidth() / 2 - 120) + p0.x;
         float y1 = res.getScaledHeight() / 2 - 130;
-        RenderingUtil.rectangleBordered(x1 + 51.0f, y1 + p0.y - 4.0f, x1 + 71.0f, y1 + p0.y + 5.0f, 1.0, Colors.getColor(140), Colors.getColor(165));
+        JelloRenderUtil.rectangleBordered(x1 + 51.0f, y1 + p0.y - 4.0f, x1 + 71.0f, y1 + p0.y + 5.0f, 1.0, Colors.getColor(140), Colors.getColor(165));
         if (p0.module.isEnabled()) {
-            RenderingUtil.rectangle(x1 + 55.0f, y1 + p0.y - 2.0f, x1 + 56.0f, y1 + p0.y + 3.0f, Colors.getColor(50, 200, 65));
+            JelloRenderUtil.rectangle(x1 + 55.0f, y1 + p0.y - 2.0f, x1 + 56.0f, y1 + p0.y + 3.0f, Colors.getColor(50, 200, 65));
         } else {
-            RenderingUtil.drawCircle(x1 + 66.0f, y1 + p0.y + 0.6f, 2.3f, 64, Colors.getColor(200, 50, 65));
-            RenderingUtil.drawCircle(0.0f, 0.0f, 0.0f, 3, Colors.getColor(165));
+            JelloRenderUtil.drawCircle(x1 + 66.0f, y1 + p0.y + 0.6f, 2.3f, 64, Colors.getColor(200, 50, 65));
+            JelloRenderUtil.drawCircle(0.0f, 0.0f, 0.0f, 3, Colors.getColor(165));
         }
         p0.translate.interpolate(p0.module.isEnabled() ? 10.0f : 0.0f, 0.0f, 2);
         float offset = p0.translate.getX();
-        RenderingUtil.rectangle(x1 + 53.0f + offset, y1 + p0.y - 2.0f, x1 + 59.0f + offset, y1 + p0.y + 3.0f, Colors.getColor(165));
+        JelloRenderUtil.rectangle(x1 + 53.0f + offset, y1 + p0.y - 2.0f, x1 + 59.0f + offset, y1 + p0.y + 3.0f, Colors.getColor(165));
         DokiDokiLegitClient.fm.getFont("SFM 8").drawString(p0.name, x1, y1 + p0.y - 1.0f, p0.module.isEnabled() ? Colors.getColor(32) : Colors.getColor(110));
         String meme = !p0.module.getKeybind().getKeyStr().equalsIgnoreCase("None") ? p0.module.getKeybind().getKeyStr() : "None";
         DokiDokiLegitClient.fm.getFont("SFM 7").drawString("Bind", x1 + 2.0f, y1 + p0.y + 14.0f, Colors.getColor(32));
@@ -576,20 +576,20 @@ extends UI {
         float x1 = res.getScaledWidth() / 2 - 135;
         float y1 = (float)(res.getScaledHeight() / 2 - 120) + p0.y;
         boolean enabled = p0.enabled = ((Boolean)p0.setting.getValue()).booleanValue();
-        RenderingUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
-        RenderingUtil.rectangleBordered(x1 + 61.0f, y1 - 1.0f, x1 + 81.0f, y1 + 8.0f, 1.0, Colors.getColor(140), Colors.getColor(165));
+        JelloRenderUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
+        JelloRenderUtil.rectangleBordered(x1 + 61.0f, y1 - 1.0f, x1 + 81.0f, y1 + 8.0f, 1.0, Colors.getColor(140), Colors.getColor(165));
         if (enabled) {
-            RenderingUtil.rectangle(x1 + 65.0f, y1 + 1.0f, x1 + 66.0f, y1 + 6.0f, Colors.getColor(50, 200, 65));
+            JelloRenderUtil.rectangle(x1 + 65.0f, y1 + 1.0f, x1 + 66.0f, y1 + 6.0f, Colors.getColor(50, 200, 65));
         } else {
-            RenderingUtil.drawCircle(x1 + 76.0f, y1 + 3.5f, 2.0f, 64, Colors.getColor(200, 50, 65));
+            JelloRenderUtil.drawCircle(x1 + 76.0f, y1 + 3.5f, 2.0f, 64, Colors.getColor(200, 50, 65));
         }
         p0.translate.interpolate(enabled ? 10.0f : 0.0f, 0.0f, 2);
         float offset = p0.translate.getX();
-        RenderingUtil.rectangle(x1 + 63.0f + offset, y1 + 1.0f, x1 + 69.0f + offset, y1 + 6.0f, Colors.getColor(165));
+        JelloRenderUtil.rectangle(x1 + 63.0f + offset, y1 + 1.0f, x1 + 69.0f + offset, y1 + 6.0f, Colors.getColor(165));
         String xd = "" + p0.setting.getName().charAt(0) + p0.setting.getName().toLowerCase().substring(1);
         DokiDokiLegitClient.fm.getFont("SFR 10").drawString(xd, x1 + 8.0f, y1, Colors.getColor(32));
-        RenderingUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
-        RenderingUtil.drawRoundedRect(x1 + 90.0f, y1 - 1.0f, x1 + 265.0f, y1 + 8.0f, 0, Colors.getColor(200));
+        JelloRenderUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
+        JelloRenderUtil.drawRoundedRect(x1 + 90.0f, y1 - 1.0f, x1 + 265.0f, y1 + 8.0f, 0, Colors.getColor(200));
         DokiDokiLegitClient.fm.getFont("SFR 8").drawString(p0.setting.getDesc(), x1 + 92.0f, y1 + 2.0f, Colors.getColor(32));
     }
 
@@ -650,19 +650,19 @@ extends UI {
         float y1 = (float)(res.getScaledHeight() / 2 - 120) + p0.y;
         String xd = "" + p0.setting.getName().charAt(0) + p0.setting.getName().toLowerCase().substring(1) + ": " + p0.setting.getValue();
         DokiDokiLegitClient.fm.getFont("SFR 10").drawString(xd, x1 + 8.0f, y1, Colors.getColor(32));
-        RenderingUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
-        RenderingUtil.drawRoundedRect(x1 + 90.0f, y1 - 1.0f, x1 + 265.0f, y1 + 8.0f, 0, Colors.getColor(200));
+        JelloRenderUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
+        JelloRenderUtil.drawRoundedRect(x1 + 90.0f, y1 - 1.0f, x1 + 265.0f, y1 + 8.0f, 0, Colors.getColor(200));
         DokiDokiLegitClient.fm.getFont("SFR 8").drawString(p0.setting.getDesc(), x1 + 92.0f, y1 + 2.0f, Colors.getColor(32));
-        RenderingUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
+        JelloRenderUtil.rectangle(0.0, 0.0, 0.0, 0.0, 0);
         double fraction = p0.dragX / 120.0;
         double value = MathUtils.getIncremental(fraction * p0.setting.getMax(), p0.setting.getInc());
         float sliderX = (float)(((Number)p0.setting.getValue()).doubleValue() * 120.0 / p0.setting.getMax());
         float xOff = res.getScaledWidth() / 2 - 125;
         float yOff = (float)(res.getScaledHeight() / 2 - 120) + p0.y + 12.0f;
-        RenderingUtil.drawRoundedRect(p0.x + xOff, yOff, p0.x + xOff + 120.0f, yOff + 2.0f, Colors.getColor(0), Colors.getColor(120));
-        RenderingUtil.drawRoundedRect(p0.x + xOff, yOff, p0.x + xOff + sliderX, yOff + 2.0f, Colors.getColor(0), Colors.getColor(160));
-        RenderingUtil.drawRoundedRect(p0.x + xOff + sliderX - 1.5f, yOff - 1.5f, p0.x + xOff + sliderX + 1.5f, yOff + 3.5f, 0, Colors.getColor(180));
-        RenderingUtil.drawRoundedRect(p0.x + xOff + sliderX - 1.0f, yOff - 1.0f, p0.x + xOff + sliderX + 1.0f, yOff + 3.0f, 0, Colors.getColor(200));
+        JelloRenderUtil.drawRoundedRect(p0.x + xOff, yOff, p0.x + xOff + 120.0f, yOff + 2.0f, Colors.getColor(0), Colors.getColor(120));
+        JelloRenderUtil.drawRoundedRect(p0.x + xOff, yOff, p0.x + xOff + sliderX, yOff + 2.0f, Colors.getColor(0), Colors.getColor(160));
+        JelloRenderUtil.drawRoundedRect(p0.x + xOff + sliderX - 1.5f, yOff - 1.5f, p0.x + xOff + sliderX + 1.5f, yOff + 3.5f, 0, Colors.getColor(180));
+        JelloRenderUtil.drawRoundedRect(p0.x + xOff + sliderX - 1.0f, yOff - 1.0f, p0.x + xOff + sliderX + 1.0f, yOff + 3.0f, 0, Colors.getColor(200));
         if (p0.dragging) {
             p0.dragX = (double)p2 - p0.lastDragX;
             newValue = StringConversions.castNumber(this.getValue(value), p0.setting.getInc());
@@ -711,7 +711,7 @@ extends UI {
         ScaledResolution res = new ScaledResolution(this.g, this.g.displayWidth, this.g.displayHeight);
         float x1 = (float)(res.getScaledWidth() / 2 - 120) + colorPreview.x;
         float y1 = (float)(res.getScaledHeight() / 2 - 130) + colorPreview.y;
-        RenderingUtil.rectangleBordered(x1 - 5.0f, y1 - 5.0f, x1 + 100.0f, y1 + 40.0f, 1.5, Colors.getColor(150), Colors.getColor(165));
+        JelloRenderUtil.rectangleBordered(x1 - 5.0f, y1 - 5.0f, x1 + 100.0f, y1 + 40.0f, 1.5, Colors.getColor(150), Colors.getColor(165));
         DokiDokiLegitClient.fm.getFont("SFR 8").drawString(colorPreview.colorName, x1, y1 - 11.0f, Colors.getColor(32));
         for (RGBSlider slider : colorPreview.sliders) {
             slider.draw(x, y);
@@ -728,7 +728,7 @@ extends UI {
         ColorObject cO = slider.colorPreview.colorObject;
         int faggotNiggerColor = Colors.getColor(cO.red, cO.green, cO.blue, 255);
         int faggotNiggerColor2 = Colors.getColor(cO.red, cO.green, cO.blue, 120);
-        RenderingUtil.rectangle(xOff, yOff, xOff + 90.0f, yOff + 6.0f, Colors.getColor(32));
+        JelloRenderUtil.rectangle(xOff, yOff, xOff + 90.0f, yOff + 6.0f, Colors.getColor(32));
         switch (slider.rgba) {
             case ALPHA: {
                 faggotNiggerColor = Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255);
@@ -736,8 +736,8 @@ extends UI {
             }
         }
         this.g.fontRendererObj.drawString("", 100.0f, 100.0f, -1);
-        RenderingUtil.rectangle(xOff, yOff, (double)xOff + 90.0 * fraction, yOff + 6.0f, Colors.getColor(0));
-        RenderingUtil.drawGradient(xOff, yOff, (double)xOff + 90.0 * fraction, yOff + 6.0f, faggotNiggerColor, faggotNiggerColor2);
+        JelloRenderUtil.rectangle(xOff, yOff, (double)xOff + 90.0 * fraction, yOff + 6.0f, Colors.getColor(0));
+        JelloRenderUtil.drawGradient(xOff, yOff, (double)xOff + 90.0 * fraction, yOff + 6.0f, faggotNiggerColor, faggotNiggerColor2);
         String current = "R";
         switch (slider.rgba) {
             case BLUE: {

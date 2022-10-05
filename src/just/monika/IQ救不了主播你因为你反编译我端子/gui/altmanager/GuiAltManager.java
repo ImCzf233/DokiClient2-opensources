@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -41,38 +41,6 @@ extends GuiScreen {
     private String status = (Object)((Object)EnumChatFormatting.GRAY) + "Idle...";
 
     public GuiAltManager() {
-//        try {
-//            String inputLine;
-//            SSLUtilities.trustAllHostnames();
-//            SSLUtilities.trustAllHttpsCertificates();
-//            System.setProperty("java.protocol.handler.pkgs", "com.sun.net.ssl.internal.www.protocol");
-//            Security.addProvider(new Provider());
-//            HostnameVerifier allHostsValid = (hostname, session) -> true;
-//            HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-//            HttpsURLConnection.setDefaultHostnameVerifier((hostname, sslSession) -> true);
-//            File file = new File(new File("Sigma"), "public.key");
-//            URL url = new URL("https://www.sigmaclient.info/verify/" + Authentication.convertToHex(file) + "|" + Minecraft.getHwid());
-//            HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
-//            connection.setReadTimeout(60000);
-//            connection.setConnectTimeout(60000);
-//            connection.setRequestProperty("User-Agent", "ArthimoWareTM-Agent");
-//            connection.setUseCaches(false);
-//            connection.connect();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-//            StringBuilder str = new StringBuilder();
-//            while ((inputLine = reader.readLine()) != null) {
-//                str.append(inputLine);
-//            }
-//            Gson gson = new Gson();
-//            JsonObject array = (JsonObject)gson.fromJson(str.toString(), JsonObject.class);
-//            if (array.get("HWID").toString().equalsIgnoreCase("\"" + Minecraft.getHwid() + "\"")) {
-//                // empty if block
-//            }
-//            reader.close();
-//        }
-//        catch (Exception e) {
-//            throw new RuntimeException();
-//        }
     }
 
     @Override
@@ -168,13 +136,13 @@ extends GuiScreen {
             }
         }
         ScaledResolution res = new ScaledResolution(this.mc, this.mc.displayWidth, this.mc.displayHeight);
-        RenderingUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
+        JelloRenderUtil.rectangle(0.0, 0.0, res.getScaledWidth(), res.getScaledHeight(), Colors.getColor(0));
         this.drawString(this.fontRendererObj, this.mc.session.getUsername(), 10, 10, 14540253);
         FontRenderer fontRendererObj = this.fontRendererObj;
         StringBuilder sb = new StringBuilder("Account Manager - ");
         this.drawCenteredString(fontRendererObj, sb.append(AltManager.registry.size()).append(" alts").toString(), this.width / 2, 10, -1);
         this.drawCenteredString(this.fontRendererObj, this.loginThread == null ? this.status : this.loginThread.getStatus(), this.width / 2, 20, -1);
-        RenderingUtil.rectangleBordered(50.0, 33.0, this.width - 50, this.height - 50, 1.0, Colors.getColor(25, 25, 25, 255), Colors.getColor(5, 5, 5, 255));
+        JelloRenderUtil.rectangleBordered(50.0, 33.0, this.width - 50, this.height - 50, 1.0, Colors.getColor(25, 25, 25, 255), Colors.getColor(5, 5, 5, 255));
         GL11.glPushMatrix();
         this.prepareScissorBox(0.0f, 33.0f, this.width, this.height - 50);
         GL11.glEnable((int)3089);
@@ -185,16 +153,16 @@ extends GuiScreen {
             String pass = alt.getPassword().equals("") ? "\u00a7cCracked" : alt.getPassword().replaceAll(".", "*");
             if (alt == this.selectedAlt) {
                 if (this.isMouseOverAlt(par1, par2, y - this.offset) && Mouse.isButtonDown((int)0)) {
-                    RenderingUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2142943931);
+                    JelloRenderUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2142943931);
                 } else if (this.isMouseOverAlt(par1, par2, y - this.offset)) {
-                    RenderingUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2142088622);
+                    JelloRenderUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2142088622);
                 } else {
-                    RenderingUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2144259791);
+                    JelloRenderUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2144259791);
                 }
             } else if (this.isMouseOverAlt(par1, par2, y - this.offset) && Mouse.isButtonDown((int)0)) {
-                RenderingUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, - Colors.getColor(45, 45, 45, 255), -2146101995);
+                JelloRenderUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, - Colors.getColor(45, 45, 45, 255), -2146101995);
             } else if (this.isMouseOverAlt(par1, par2, y - this.offset)) {
-                RenderingUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2145180893);
+                JelloRenderUtil.rectangleBordered(52.0, y - this.offset - 4, this.width - 52, y - this.offset + 20, 1.0, Colors.getColor(45, 45, 45, 255), -2145180893);
             }
             this.drawCenteredString(this.fontRendererObj, name, this.width / 2, y - this.offset, -1);
             this.drawCenteredString(this.fontRendererObj, pass, this.width / 2, y - this.offset + 10, 5592405);

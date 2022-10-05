@@ -71,37 +71,6 @@ public class DokiDokiLegitClient { // Fuck You Czf233
         fss = new NharFont("SF UI Display Regular", 12.0f);
         header = new NharFont("SF UI Display Semibold", 10.0f);
         subHeader = new NharFont("SF UI Display Light", 10.0f);
-//        try {
-//            String inputLine;
-//            SSLUtilities.trustAllHostnames();
-//            SSLUtilities.trustAllHttpsCertificates();
-//            System.setProperty("java.protocol.handler.pkgs", "com.sun.net.ssl.internal.www.protocol");
-//            Security.addProvider(new Provider());
-//            HostnameVerifier allHostsValid = (hostname, session) -> true;
-//            HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
-//            HttpsURLConnection.setDefaultHostnameVerifier((hostname, sslSession) -> true);
-//            URL url = new URL("https://www.sigmaclient.info/update-check/6");
-//            HttpsURLConnection connection = (HttpsURLConnection)url.openConnection();
-//            connection.setRequestProperty("User-Agent", "ArthimoWareTM-Agent");
-//            connection.connect();
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-//            StringBuilder str = new StringBuilder();
-//            while ((inputLine = reader.readLine()) != null) {
-//                str.append(inputLine);
-//            }
-//            Gson gson = new Gson();
-//            JsonObject array = (JsonObject)gson.fromJson(str.toString(), JsonObject.class);
-//            if (array.get("Version").getAsInt() > 6) {
-//                Notifications.getManager().post("Outdated Version", "Please update the client.", 150000, Notifications.Type.WARNING);
-//                Notifications.getManager().post("Client Warning", "Client will close in 5 minutes!", 10000, Notifications.Type.WARNING);
-//                System.out.println("Outdated...");
-//                outdated = true;
-//            }
-//            reader.close();
-//        }
-//        catch (Exception e) {
-//            throw new RuntimeException();
-//        }
     }
 
     public static ModuleManager<Module> getModuleManager() {
