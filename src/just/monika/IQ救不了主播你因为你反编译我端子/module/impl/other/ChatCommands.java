@@ -34,9 +34,9 @@ extends Module {
         event.setCancelled(true);
         String[] commandBits = ec.getText().substring(prefix.length()).split(" ");
         String commandName = commandBits[0];
-        Command command = CommandManager.commandMap.get(commandName);
+        Command command = CommandManager.commandMap.get(commandName.toLowerCase());
         if (command == null) {
-            ChatUtil.printChat("\u00a7c[\u00a7fS\u00a7c]\u00a77 \u00a77\"\u00a7f" + commandName + "\u00a77\"\u00a78 is not a valid command.");
+            ChatUtil.printChat(Command.chatPrefix + commandName + "\u00a77\"\u00a78 is not a valid command.");
             return;
         }
         if (commandBits.length > 1) {

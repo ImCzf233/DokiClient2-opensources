@@ -31,7 +31,7 @@ import just.monika.IQ救不了主播你因为你反编译我端子.module.data.M
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.Options;
 import just.monika.IQ救不了主播你因为你反编译我端子.module.data.Setting;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.MathUtils;
-import just.monika.IQ救不了主播你因为你反编译我端子.util.JelloRenderUtil;
+import just.monika.IQ救不了主播你因为你反编译我端子.util.RenderingUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.StringConversions;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.misc.ChatUtil;
 import just.monika.IQ救不了主播你因为你反编译我端子.util.render.Colors;
@@ -57,9 +57,9 @@ extends UI {
     public void mainPanelDraw(MainPanel panel, int p0, int p1) {
         GlStateManager.pushMatrix();
         GlStateManager.popMatrix();
-        JelloRenderUtil.rectangleBordered((double)(panel.x + panel.dragX) - 0.3, (double)(panel.y + panel.dragY) - 0.3, (double)(panel.x + 400.0f + panel.dragX) + 0.3, (double)(panel.y + 270.0f + panel.dragY) + 0.3, 0.5, Colors.getColor(60), Colors.getColor(10));
-        JelloRenderUtil.rectangleBordered((double)(panel.x + panel.dragX) + 0.6, (double)(panel.y + panel.dragY) + 0.6, (double)(panel.x + 400.0f + panel.dragX) - 0.6, (double)(panel.y + 270.0f + panel.dragY) - 0.6, 1.3, Colors.getColor(60), Colors.getColor(40));
-        JelloRenderUtil.rectangleBordered((double)(panel.x + panel.dragX) + 2.5, (double)(panel.y + panel.dragY) + 2.5, (double)(panel.x + 400.0f + panel.dragX) - 2.5, (double)(panel.y + 270.0f + panel.dragY) - 2.5, 0.5, Colors.getColor(20), Colors.getColor(10));
+        RenderingUtil.rectangleBordered((double)(panel.x + panel.dragX) - 0.3, (double)(panel.y + panel.dragY) - 0.3, (double)(panel.x + 400.0f + panel.dragX) + 0.3, (double)(panel.y + 270.0f + panel.dragY) + 0.3, 0.5, Colors.getColor(60), Colors.getColor(10));
+        RenderingUtil.rectangleBordered((double)(panel.x + panel.dragX) + 0.6, (double)(panel.y + panel.dragY) + 0.6, (double)(panel.x + 400.0f + panel.dragX) - 0.6, (double)(panel.y + 270.0f + panel.dragY) - 0.6, 1.3, Colors.getColor(60), Colors.getColor(40));
+        RenderingUtil.rectangleBordered((double)(panel.x + panel.dragX) + 2.5, (double)(panel.y + panel.dragY) + 2.5, (double)(panel.x + 400.0f + panel.dragX) - 2.5, (double)(panel.y + 270.0f + panel.dragY) - 2.5, 0.5, Colors.getColor(20), Colors.getColor(10));
         if (this.hue > 255.0f) {
             this.hue = 0.0f;
         }
@@ -82,21 +82,21 @@ extends UI {
         int color2 = color332.getRGB();
         int color3 = color333.getRGB();
         this.hue = (float)((double)this.hue + 0.15);
-        JelloRenderUtil.drawGradientSideways(panel.x + panel.dragX + 3.0f, panel.y + panel.dragY + 3.0f, panel.x + 202.0f + panel.dragX - 3.0f, panel.dragY + panel.y + 4.0f, color, color2);
-        JelloRenderUtil.drawGradientSideways(panel.x + panel.dragX + 199.0f, panel.y + panel.dragY + 3.0f, panel.x + 400.0f + panel.dragX - 3.0f, panel.dragY + panel.y + 4.0f, color2, color3);
-        JelloRenderUtil.rectangle(panel.x + panel.dragX + 3.0f, (double)(panel.y + panel.dragY) + 3.3, panel.x + 400.0f + panel.dragX - 3.0f, panel.dragY + panel.y + 4.0f, Colors.getColor(0, 120));
+        RenderingUtil.drawGradientSideways(panel.x + panel.dragX + 3.0f, panel.y + panel.dragY + 3.0f, panel.x + 202.0f + panel.dragX - 3.0f, panel.dragY + panel.y + 4.0f, color, color2);
+        RenderingUtil.drawGradientSideways(panel.x + panel.dragX + 199.0f, panel.y + panel.dragY + 3.0f, panel.x + 400.0f + panel.dragX - 3.0f, panel.dragY + panel.y + 4.0f, color2, color3);
+        RenderingUtil.rectangle(panel.x + panel.dragX + 3.0f, (double)(panel.y + panel.dragY) + 3.3, panel.x + 400.0f + panel.dragX - 3.0f, panel.dragY + panel.y + 4.0f, Colors.getColor(0, 120));
         boolean isOff = false;
         for (float y = 5.0f; y < 268.0f; y += 4.0f) {
             int x;
             int n = x = isOff ? 6 : 4;
             while (x < 397) {
-                JelloRenderUtil.rectangle(panel.x + panel.dragX + (float)x, panel.y + panel.dragY + y, (double)(panel.x + panel.dragX + (float)x) + 1.3, (double)(panel.y + panel.dragY + y) + 1.6, Colors.getColor(12));
+                RenderingUtil.rectangle(panel.x + panel.dragX + (float)x, panel.y + panel.dragY + y, (double)(panel.x + panel.dragX + (float)x) + 1.3, (double)(panel.y + panel.dragY + y) + 1.6, Colors.getColor(12));
                 x += 4;
             }
             isOff = !isOff;
         }
-        JelloRenderUtil.rectangleBordered(panel.x + panel.dragX + 57.0f, panel.y + panel.dragY + 16.0f, panel.x + 390.0f + panel.dragX, panel.y + 250.0f + panel.dragY, 0.5, Colors.getColor(46), Colors.getColor(10));
-        JelloRenderUtil.rectangle(panel.x + panel.dragX + 58.0f, panel.y + panel.dragY + 17.0f, panel.x + 390.0f + panel.dragX - 1.0f, panel.y + 250.0f + panel.dragY - 1.0f, Colors.getColor(17));
+        RenderingUtil.rectangleBordered(panel.x + panel.dragX + 57.0f, panel.y + panel.dragY + 16.0f, panel.x + 390.0f + panel.dragX, panel.y + 250.0f + panel.dragY, 0.5, Colors.getColor(46), Colors.getColor(10));
+        RenderingUtil.rectangle(panel.x + panel.dragX + 58.0f, panel.y + panel.dragY + 17.0f, panel.x + 390.0f + panel.dragX - 1.0f, panel.y + 250.0f + panel.dragY - 1.0f, Colors.getColor(17));
         for (SLButton button : panel.slButtons) {
             button.draw(p0, p1);
         }
@@ -125,7 +125,6 @@ extends UI {
             mainPanel.typeButton.add(new CategoryButton(mainPanel, types.name(), x, y + (float)y1));
             y += 14.0f;
         }
-        mainPanel.typeButton.add(new CategoryButton(mainPanel, "Colors", x, y + (float)y1));
         mainPanel.typeButton.add(new CategoryButton(mainPanel, "Extra", x, (y += 14.0f) + (float)y1));
         mainPanel.slButtons.add(new SLButton(mainPanel, "Save", 5.0f, 201.0f, false));
         mainPanel.slButtons.add(new SLButton(mainPanel, "Load", 5.0f, 215.0f, true));
@@ -480,7 +479,7 @@ extends UI {
     @Override
     public void categoryPanelDraw(CategoryPanel categoryPanel, float x, float y) {
         if (categoryPanel.visible) {
-            JelloRenderUtil.rectangle(114.0f + categoryPanel.categoryButton.panel.dragX, 65.0f + categoryPanel.categoryButton.panel.dragY, 115.0f + categoryPanel.categoryButton.panel.dragX + DokiDokiLegitClient.fs.getStringWidth(categoryPanel.headerString) + 2.0f, 65.0f + categoryPanel.categoryButton.panel.dragY + DokiDokiLegitClient.fs.getStringHeight(categoryPanel.headerString), Colors.getColor(17));
+            RenderingUtil.rectangle(114.0f + categoryPanel.categoryButton.panel.dragX, 65.0f + categoryPanel.categoryButton.panel.dragY, 115.0f + categoryPanel.categoryButton.panel.dragX + DokiDokiLegitClient.fs.getStringWidth(categoryPanel.headerString) + 2.0f, 65.0f + categoryPanel.categoryButton.panel.dragY + DokiDokiLegitClient.fs.getStringHeight(categoryPanel.headerString), Colors.getColor(17));
             DokiDokiLegitClient.fs.drawStringWithShadow(categoryPanel.headerString, 115.0f + categoryPanel.categoryButton.panel.dragX, 66.0f + categoryPanel.categoryButton.panel.dragY, -1);
         }
         for (ColorPreview cp : categoryPanel.colorPreviews) {
@@ -553,8 +552,8 @@ extends UI {
             String meme;
             float xOff = panel.categoryButton.panel.dragX;
             float yOff = panel.categoryButton.panel.dragY;
-            JelloRenderUtil.rectangle((double)(p0.x + xOff) + 0.6, (double)(p0.y + yOff) + 0.6, (double)(p0.x + 6.0f + xOff) + -0.6, (double)(p0.y + 6.0f + yOff) + -0.6, Colors.getColor(10));
-            JelloRenderUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + 6.0f + xOff + -1.0f, p0.y + 6.0f + yOff + -1.0f, Colors.getColor(76), Colors.getColor(51));
+            RenderingUtil.rectangle((double)(p0.x + xOff) + 0.6, (double)(p0.y + yOff) + 0.6, (double)(p0.x + 6.0f + xOff) + -0.6, (double)(p0.y + 6.0f + yOff) + -0.6, Colors.getColor(10));
+            RenderingUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + 6.0f + xOff + -1.0f, p0.y + 6.0f + yOff + -1.0f, Colors.getColor(76), Colors.getColor(51));
             p0.enabled = p0.module.isEnabled();
             boolean hovering = p2 >= p0.x + xOff && p3 >= p0.y + yOff && p2 <= p0.x + 35.0f + xOff && p3 <= p0.y + 6.0f + yOff;
             GlStateManager.pushMatrix();
@@ -564,10 +563,10 @@ extends UI {
             DokiDokiLegitClient.fss.drawString(meme, p0.x + 7.6f + xOff, p0.y + 2.7f + yOff, NharFont.FontType.OUTLINE_THIN, p0.isBinding ? Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255) : (p0.enabled ? -1 : Colors.getColor(180)), Colors.getColor(10));
             GlStateManager.popMatrix();
             if (p0.enabled) {
-                JelloRenderUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255), Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 120));
+                RenderingUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255), Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 120));
             }
             if (hovering && !p0.enabled) {
-                JelloRenderUtil.rectangle(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(255, 40));
+                RenderingUtil.rectangle(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(255, 40));
             }
             if (hovering) {
                 DokiDokiLegitClient.fs.drawStringWithShadow("Desc: ", panel.categoryButton.panel.x + 4.0f + panel.categoryButton.panel.dragX + 55.0f, panel.categoryButton.panel.y + 8.0f + panel.categoryButton.panel.dragY, -1);
@@ -610,8 +609,8 @@ extends UI {
         if (panel.categoryButton.enabled) {
             float xOff = panel.categoryButton.panel.dragX;
             float yOff = panel.categoryButton.panel.dragY;
-            JelloRenderUtil.rectangle((double)(p0.x + xOff) + 0.6, (double)(p0.y + yOff) + 0.6, (double)(p0.x + 6.0f + xOff) + -0.6, (double)(p0.y + 6.0f + yOff) + -0.6, Colors.getColor(10));
-            JelloRenderUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + 6.0f + xOff + -1.0f, p0.y + 6.0f + yOff + -1.0f, Colors.getColor(76), Colors.getColor(51));
+            RenderingUtil.rectangle((double)(p0.x + xOff) + 0.6, (double)(p0.y + yOff) + 0.6, (double)(p0.x + 6.0f + xOff) + -0.6, (double)(p0.y + 6.0f + yOff) + -0.6, Colors.getColor(10));
+            RenderingUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + 6.0f + xOff + -1.0f, p0.y + 6.0f + yOff + -1.0f, Colors.getColor(76), Colors.getColor(51));
             p0.enabled = (Boolean)p0.setting.getValue();
             boolean hovering = p2 >= p0.x + xOff && p3 >= p0.y + yOff && p2 <= p0.x + 35.0f + xOff && p3 <= p0.y + 6.0f + yOff;
             GlStateManager.pushMatrix();
@@ -620,10 +619,10 @@ extends UI {
             DokiDokiLegitClient.fss.drawString(xd, p0.x + 7.5f + xOff, p0.y + 2.6f + yOff, NharFont.FontType.OUTLINE_THIN, hovering ? Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255) : (p0.enabled ? -1 : Colors.getColor(180)), Colors.getColor(10));
             GlStateManager.popMatrix();
             if (p0.enabled) {
-                JelloRenderUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255), Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 120));
+                RenderingUtil.drawGradient(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255), Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 120));
             }
             if (hovering && !p0.enabled) {
-                JelloRenderUtil.rectangle(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(255, 40));
+                RenderingUtil.rectangle(p0.x + xOff + 1.0f, p0.y + yOff + 1.0f, p0.x + xOff + 5.0f, p0.y + yOff + 5.0f, Colors.getColor(255, 40));
             }
             if (hovering) {
                 DokiDokiLegitClient.fs.drawStringWithShadow("Desc: ", panel.categoryButton.panel.x + 4.0f + panel.categoryButton.panel.dragX + 55.0f, panel.categoryButton.panel.y + 8.0f + panel.categoryButton.panel.dragY, -1);
@@ -656,25 +655,25 @@ extends UI {
         float xOff = panel.categoryButton.panel.dragX;
         float yOff = panel.categoryButton.panel.dragY;
         boolean hovering = p2 >= panel.categoryButton.panel.dragX + p0.x && p3 >= panel.categoryButton.panel.dragY + p0.y && p2 <= panel.categoryButton.panel.dragX + p0.x + 40.0f && p3 <= panel.categoryButton.panel.dragY + p0.y + 6.0f;
-        JelloRenderUtil.rectangle((double)(p0.x + xOff) - 0.3, (double)(p0.y + yOff) - 0.3, (double)(p0.x + xOff + 40.0f) + 0.3, (double)(p0.y + yOff + 6.0f) + 0.3, Colors.getColor(10));
-        JelloRenderUtil.drawGradient(p0.x + xOff, p0.y + yOff, p0.x + xOff + 40.0f, p0.y + yOff + 6.0f, Colors.getColor(31), Colors.getColor(36));
+        RenderingUtil.rectangle((double)(p0.x + xOff) - 0.3, (double)(p0.y + yOff) - 0.3, (double)(p0.x + xOff + 40.0f) + 0.3, (double)(p0.y + yOff + 6.0f) + 0.3, Colors.getColor(10));
+        RenderingUtil.drawGradient(p0.x + xOff, p0.y + yOff, p0.x + xOff + 40.0f, p0.y + yOff + 6.0f, Colors.getColor(31), Colors.getColor(36));
         if (hovering) {
-            JelloRenderUtil.rectangleBordered(p0.x + xOff, p0.y + yOff, p0.x + xOff + 40.0f, p0.y + yOff + 6.0f, 0.3, Colors.getColor(0, 0), Colors.getColor(90));
+            RenderingUtil.rectangleBordered(p0.x + xOff, p0.y + yOff, p0.x + xOff + 40.0f, p0.y + yOff + 6.0f, 0.3, Colors.getColor(0, 0), Colors.getColor(90));
         }
         DokiDokiLegitClient.fs.drawStringWithShadow("", 0.0f, 0.0f, Colors.getColor(0, 0));
         DokiDokiLegitClient.fss.drawString(p0.option.getName(), p0.x + xOff, p0.y - 5.0f + yOff, NharFont.FontType.OUTLINE_THIN, -1, Colors.getColor(10));
         GlStateManager.pushMatrix();
         GlStateManager.translate((double)(p0.x + xOff + 36.0f), (double)p0.y + (p0.active ? 3.5 : 2.5) + (double)yOff, 0.0);
         GlStateManager.rotate(p0.active ? 270.0f : 90.0f, 0.0f, 0.0f, 90.0f);
-        JelloRenderUtil.drawCircle(0.0f, 0.0f, 2.5f, 3, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255));
-        JelloRenderUtil.drawCircle(0.0f, 0.0f, 1.5f, 3, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255));
-        JelloRenderUtil.drawCircle(0.0f, 0.0f, 1.0f, 3, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255));
+        RenderingUtil.drawCircle(0.0f, 0.0f, 2.5f, 3, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255));
+        RenderingUtil.drawCircle(0.0f, 0.0f, 1.5f, 3, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255));
+        RenderingUtil.drawCircle(0.0f, 0.0f, 1.0f, 3, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255));
         GlStateManager.popMatrix();
         DokiDokiLegitClient.fss.drawString(p0.option.getSelected(), p0.x + 2.0f + xOff - 1.0f, p0.y + 2.5f + yOff, NharFont.FontType.OUTLINE_THIN, -1, Colors.getColor(10));
         if (p0.active) {
             int i = p0.buttons.size();
-            JelloRenderUtil.rectangle((double)(p0.x + xOff) - 0.3, (double)(p0.y + 7.0f + yOff) - 0.3, (double)(p0.x + xOff + 40.0f) + 0.3, (double)(p0.y + yOff + 7.0f + (float)(6 * i)) + 0.3, Colors.getColor(10));
-            JelloRenderUtil.drawGradient(p0.x + xOff, p0.y + yOff + 7.0f, p0.x + xOff + 40.0f, p0.y + yOff + 7.0f + (float)(6 * i), Colors.getColor(31), Colors.getColor(36));
+            RenderingUtil.rectangle((double)(p0.x + xOff) - 0.3, (double)(p0.y + 7.0f + yOff) - 0.3, (double)(p0.x + xOff + 40.0f) + 0.3, (double)(p0.y + yOff + 7.0f + (float)(6 * i)) + 0.3, Colors.getColor(10));
+            RenderingUtil.drawGradient(p0.x + xOff, p0.y + yOff + 7.0f, p0.x + xOff + 40.0f, p0.y + yOff + 7.0f + (float)(6 * i), Colors.getColor(31), Colors.getColor(36));
         }
     }
 
@@ -713,10 +712,10 @@ extends UI {
         float xOff = panel.dragX;
         float yOff = panel.dragY + 75.0f;
         boolean hovering = x >= 55.0f + slButton.x + xOff && y >= slButton.y + yOff - 2.0f && x <= 55.0f + slButton.x + xOff + 40.0f && y <= slButton.y + 8.0f + yOff + 2.0f;
-        JelloRenderUtil.rectangleBordered((double)(slButton.x + xOff + 55.0f) - 0.3, (double)(slButton.y + yOff) - 0.3 - 2.0, (double)(slButton.x + xOff + 40.0f + 55.0f) + 0.3, (double)(slButton.y + 8.0f + yOff) + 0.3 + 2.0, 0.3, Colors.getColor(10), Colors.getColor(10));
-        JelloRenderUtil.drawGradient(slButton.x + xOff + 55.0f, slButton.y + yOff - 2.0f, slButton.x + xOff + 40.0f + 55.0f, slButton.y + 8.0f + yOff + 2.0f, Colors.getColor(46), Colors.getColor(27));
+        RenderingUtil.rectangleBordered((double)(slButton.x + xOff + 55.0f) - 0.3, (double)(slButton.y + yOff) - 0.3 - 2.0, (double)(slButton.x + xOff + 40.0f + 55.0f) + 0.3, (double)(slButton.y + 8.0f + yOff) + 0.3 + 2.0, 0.3, Colors.getColor(10), Colors.getColor(10));
+        RenderingUtil.drawGradient(slButton.x + xOff + 55.0f, slButton.y + yOff - 2.0f, slButton.x + xOff + 40.0f + 55.0f, slButton.y + 8.0f + yOff + 2.0f, Colors.getColor(46), Colors.getColor(27));
         if (hovering) {
-            JelloRenderUtil.rectangleBordered(slButton.x + xOff + 55.0f, slButton.y + yOff - 2.0f, slButton.x + xOff + 40.0f + 55.0f, slButton.y + 8.0f + yOff + 2.0f, 0.6, Colors.getColor(0, 0), Colors.getColor(90));
+            RenderingUtil.rectangleBordered(slButton.x + xOff + 55.0f, slButton.y + yOff - 2.0f, slButton.x + xOff + 40.0f + 55.0f, slButton.y + 8.0f + yOff + 2.0f, 0.6, Colors.getColor(0, 0), Colors.getColor(90));
         }
         float xOffset = DokiDokiLegitClient.fs.getStringWidth(slButton.name) / 2.0f;
         DokiDokiLegitClient.fs.drawStringWithShadow(slButton.name, xOff + 25.0f + 55.0f - xOffset, slButton.y + yOff + 3.5f, -1);
@@ -766,9 +765,9 @@ extends UI {
     public void colorPrewviewDraw(ColorPreview colorPreview, float x, float y) {
         float xOff = colorPreview.x + colorPreview.categoryPanel.panel.dragX;
         float yOff = colorPreview.y + colorPreview.categoryPanel.panel.dragY + 75.0f;
-        JelloRenderUtil.rectangleBordered(xOff - 80.0f, yOff - 6.0f, xOff + 1.0f, yOff + 46.0f, 0.3, Colors.getColor(48), Colors.getColor(10));
-        JelloRenderUtil.rectangle(xOff - 79.0f, yOff - 5.0f, xOff, yOff + 45.0f, Colors.getColor(17));
-        JelloRenderUtil.rectangle(xOff - 74.0f, yOff - 6.0f, xOff - 73.0f + DokiDokiLegitClient.fs.getStringWidth(colorPreview.colorName) + 1.0f, yOff - 4.0f, Colors.getColor(17));
+        RenderingUtil.rectangleBordered(xOff - 80.0f, yOff - 6.0f, xOff + 1.0f, yOff + 46.0f, 0.3, Colors.getColor(48), Colors.getColor(10));
+        RenderingUtil.rectangle(xOff - 79.0f, yOff - 5.0f, xOff, yOff + 45.0f, Colors.getColor(17));
+        RenderingUtil.rectangle(xOff - 74.0f, yOff - 6.0f, xOff - 73.0f + DokiDokiLegitClient.fs.getStringWidth(colorPreview.colorName) + 1.0f, yOff - 4.0f, Colors.getColor(17));
         DokiDokiLegitClient.fs.drawStringWithShadow(colorPreview.colorName, xOff - 73.0f, yOff - 6.0f, -1);
         for (RGBSlider slider : colorPreview.sliders) {
             slider.draw(x, y);
@@ -784,7 +783,7 @@ extends UI {
         ColorObject cO = slider.colorPreview.colorObject;
         int faggotNiggerColor = Colors.getColor(cO.red, cO.green, cO.blue, 255);
         int faggotNiggerColor2 = Colors.getColor(cO.red, cO.green, cO.blue, 120);
-        JelloRenderUtil.rectangle(xOff, yOff, xOff + 60.0f, yOff + 6.0f, Colors.getColor(32));
+        RenderingUtil.rectangle(xOff, yOff, xOff + 60.0f, yOff + 6.0f, Colors.getColor(32));
         switch (slider.rgba) {
             case ALPHA: {
                 faggotNiggerColor = Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255);
@@ -792,8 +791,8 @@ extends UI {
             }
         }
         this.mc.fontRendererObj.drawString("", 100.0f, 100.0f, -1);
-        JelloRenderUtil.rectangle(xOff, yOff, (double)xOff + 60.0 * fraction, yOff + 6.0f, Colors.getColor(0));
-        JelloRenderUtil.drawGradient(xOff, yOff, (double)xOff + 60.0 * fraction, yOff + 6.0f, faggotNiggerColor, faggotNiggerColor2);
+        RenderingUtil.rectangle(xOff, yOff, (double)xOff + 60.0 * fraction, yOff + 6.0f, Colors.getColor(0));
+        RenderingUtil.drawGradient(xOff, yOff, (double)xOff + 60.0 * fraction, yOff + 6.0f, faggotNiggerColor, faggotNiggerColor2);
         DokiDokiLegitClient.fss.drawStringWithShadow("", 0.0f, 0.0f, Colors.getColor(0, 0));
         String current = "R";
         switch (slider.rgba) {
@@ -888,9 +887,9 @@ extends UI {
             double fraction = slider.dragX / 40.0;
             double value = MathUtils.getIncremental(fraction * slider.setting.getMax(), slider.setting.getInc());
             float sliderX = (float)(((Number)slider.setting.getValue()).doubleValue() * 38.0 / slider.setting.getMax());
-            JelloRenderUtil.rectangle((double)(slider.x + xOff) - 0.3, (double)(slider.y + yOff) - 0.3, (double)(slider.x + xOff + 38.0f) + 0.3, (double)(slider.y + yOff + 3.0f) + 0.3, Colors.getColor(10));
-            JelloRenderUtil.drawGradient(slider.x + xOff, slider.y + yOff, slider.x + xOff + 38.0f, slider.y + yOff + 3.0f, Colors.getColor(46), Colors.getColor(27));
-            JelloRenderUtil.drawGradient(slider.x + xOff, slider.y + yOff, slider.x + xOff + sliderX, slider.y + yOff + 3.0f, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255), Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 120));
+            RenderingUtil.rectangle((double)(slider.x + xOff) - 0.3, (double)(slider.y + yOff) - 0.3, (double)(slider.x + xOff + 38.0f) + 0.3, (double)(slider.y + yOff + 3.0f) + 0.3, Colors.getColor(10));
+            RenderingUtil.drawGradient(slider.x + xOff, slider.y + yOff, slider.x + xOff + 38.0f, slider.y + yOff + 3.0f, Colors.getColor(46), Colors.getColor(27));
+            RenderingUtil.drawGradient(slider.x + xOff, slider.y + yOff, slider.x + xOff + sliderX, slider.y + yOff + 3.0f, Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 255), Colors.getColor(ColorManager.hudColor.red, ColorManager.hudColor.green, ColorManager.hudColor.blue, 120));
             DokiDokiLegitClient.fs.drawStringWithShadow("", slider.x + xOff, slider.y - 5.0f + yOff, -1);
             String xd = "" + slider.setting.getName().charAt(0) + slider.setting.getName().toLowerCase().substring(1);
             double setting = ((Number)slider.setting.getValue()).doubleValue();

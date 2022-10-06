@@ -14,7 +14,7 @@ implements Fireable,
         EventListener {
     private final String[] names;
     private final String description;
-    public static final String chatPrefix = "\u00a7c[\u00a7fS\u00a7c]\u00a77 ";
+    public static final String chatPrefix = "\u00a7c[\u00a7fDoki Client\u00a7c]\u00a77 ";
     public Minecraft mc = Minecraft.getMinecraft();
 
     public Command(String[] names, String description) {
@@ -23,12 +23,12 @@ implements Fireable,
     }
 
     protected void printDescription() {
-        String message = "\u00a7c[\u00a7fS\u00a7c]\u00a77 " + this.getName() + (Object)((Object)EnumChatFormatting.GRAY) + ": " + this.description;
+        String message = chatPrefix + this.getName() + EnumChatFormatting.GRAY + ": " + this.description;
         ChatUtil.printChat(message);
     }
 
     protected void printUsage() {
-        String message = "\u00a7c[\u00a7fS\u00a7c]\u00a77 " + this.getName() + (Object)((Object)EnumChatFormatting.GRAY) + ": " + this.getUsage();
+        String message = chatPrefix + this.getName() + EnumChatFormatting.GRAY + ": " + this.getUsage();
         ChatUtil.printChat(message);
     }
 
